@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row ms-5" style="margin-left:200px;">
+        <div class="col-sm-4"><img src="{{m.image.url}}" height="300px" width="300px"></div>
+        <div class="col-sm-6" style="text-align:justify;">
+            <h3>{{m.name}}</h3>
+
+            <p>{{m.desc}}</p>
+            <a class="btn btn-success text-dark" href="{% url 'movieapp:update' m.id %}">Update</a>
+            <a class="btn btn-danger text-dark" href="{% url 'movieapp:delete' m.id %}">Delete</a>
+
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
